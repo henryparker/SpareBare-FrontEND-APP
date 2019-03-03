@@ -44,7 +44,7 @@ export class Dashboard extends React.Component {
                         title = "SUBSCRIBE"
                         titleStyle={{ fontWeight: "700" }}
                         buttonStyle={{
-                          backgroundColor: this.props.subscribeList.includes(val._id)?'#27ae60':"#9b59b6",
+                          backgroundColor: this.props.subscribeList.includes(val._id)?'#27ae60':"#e67e22",
                           width: 300,
                           height: 45,
                           borderColor: "transparent",
@@ -114,7 +114,17 @@ export class Dashboard extends React.Component {
             </View>
             <View style={{alignItems:'center'}}>
               <Avatar rounded size="xlarge" source={{uri:this.props.auth.info.picture.data.url}}/>
-
+              <Button  titleStyle={{ fontWeight: "700" }}
+                        buttonStyle={{
+                          backgroundColor: this.props.subscribeList.includes(val._id)?'#27ae60':"#e67e22",
+                          width: 300,
+                          height: 45,
+                          borderColor: "transparent",
+                          borderWidth: 0,
+                          borderRadius: 15
+                        }}
+                        containerStyle={{ flex: 1, alignItems:'center' }}
+                        onPress={()=>{this.props.navigation.navigate("MyCampaignDashboard")}} title='MY Managed Campaign' containerStyle= {{marginVertical:20}} titleStyle={{ fontWeight: "700",color:'white' }} buttonStyle={{backgroundColor: "#3498db",height: 45,width:null}}/>
               <Text h3> Total Spare: $ {this.props.totalSpare.totalSpare.toFixed(2)}</Text>
             </View>
             <View >

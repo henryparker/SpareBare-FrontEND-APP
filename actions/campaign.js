@@ -28,10 +28,17 @@ export const startAddCampaign = (data) => {
     };
         
     };
+
+export const setMyCampaign = (data={})=>({
+    type: 'SET_MY_CAMPAIGN',
+    data
+})
+
 export const startSetCampaign = ()=>{
     return async(dispatch,getState) =>{
         let val = await api.get('/campaign')
         dispatch(setCampaign(val.body))
+        dispatch(setMyCampaign(val.body.filter((val)=>{val._id == getState().auth.info._id})))
         console.log("=========================fdffsfklsfksdf==========================");
     }
 }

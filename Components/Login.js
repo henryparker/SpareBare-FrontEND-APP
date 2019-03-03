@@ -33,13 +33,13 @@ export  class Login extends React.Component {
         
       return (
 
-        <View style={{flex:1}} color='#f5f6fa'>
+        <View style={{flex:1, backgroundColor:'#55efc4'}} >
           
             <View style={{alignItems:'center', marginTop:'40%'}}>
-                <Text h1 style={{color:'#3498db'}}>Spare Change</Text>
+                <Text h1 style={{fontSize:70, color:'#3498db'}}>€hange</Text>
             </View>
             <View style ={{flex:1,flexDirection:'row',justifyContent:'center'}}> 
-
+                  <Image style = {{marginTop:10, aspectRatio: 2/2, width:width/2}} source={require('../assets/piggy-bank.png')} ></Image>
                   <Icon
                   containerStyle={{position:'absolute',bottom:0}}
                   onPress={async()=>{

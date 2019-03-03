@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Please start server on https://spare-bare-server.herokuapp.com/ first\nServer: https://github.com/henryparker/SpareBareServer",
+    "githubUrl": "https://github.com/henryparker/SpareBare-FrontEND-APP"
   }
 }
