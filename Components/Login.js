@@ -1,7 +1,7 @@
 import React from 'react';
 import {Expo,AuthSession} from 'expo';
-import { StyleSheet, View, Image,Dimensions,ImageBackground,Button} from 'react-native';
-import {Badge,Text,Icon} from 'react-native-elements';
+import { StyleSheet, View, Image,Dimensions,ImageBackground,TouchableOpacity} from 'react-native';
+import {Badge,Text,Icon,Button} from 'react-native-elements';
 import jwtDecoder from 'jwt-decode';
 import {LinearGradient} from 'react-native-linear-gradient';
 import axios from 'axios';
@@ -33,13 +33,27 @@ export  class Login extends React.Component {
         
       return (
 
-        <View style={{flex:1, backgroundColor:'#55efc4'}} >
+        <View style={{flex:1, backgroundColor:'#b8e994'}} >
           
             <View style={{alignItems:'center', marginTop:'40%'}}>
-                <Text h1 style={{fontSize:70, color:'#3498db'}}>€hange</Text>
+                <Text h1 style={{color:'#3498db', fontSize: 40}}>€hange</Text>
+
             </View>
+
             <View style ={{flex:1,flexDirection:'row',justifyContent:'center'}}> 
                   <Image style = {{marginTop:10, aspectRatio: 2/2, width:width/2}} source={require('../assets/piggy-bank.png')} ></Image>
+                  
+                  {/* <Button title="LOGIN" containerStyle={{position:'absolute',bottom:170, width:140, borderRadius:25}} buttonStyle={{backgroundColor:"green"}}></Button> */}
+                  <Icon
+                    containerStyle={{position:'absolute',bottom:80}}
+                    reverse
+                    raised
+                    size={32}
+                    name='envelope'
+                    type='font-awesome'
+                    color='green'
+                  />
+
                   <Icon
                   containerStyle={{position:'absolute',bottom:0}}
                   onPress={async()=>{

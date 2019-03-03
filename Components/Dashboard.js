@@ -23,7 +23,7 @@ export class Dashboard extends React.Component {
         let campaignCardComponent = (val) => {
           if(val){
           return (
-          <Card key={val._id}>
+          <Card key={val._id} onPress={()=>this.props.navigation.navigate("IndividualCampaign",{campaign_Id: val._id})}>
                 
                 <Card.Cover source={{ uri: val.ImageURL }} />
                 <Card.Content>
@@ -105,7 +105,7 @@ export class Dashboard extends React.Component {
         //     </Card>): <Text h1 style={{color:'#3498db'}}>sup</Text>
         
       return (
-      <View style={{flex:1}}>
+      <View style={{flex:1,  backgroundColor:"#eff4ff"}}>
         <ScrollView style={{flex:1}}>
         
             <View style={{alignItems:'center', marginTop:'20%'}}>
@@ -114,17 +114,13 @@ export class Dashboard extends React.Component {
             </View>
             <View style={{alignItems:'center'}}>
               <Avatar rounded size="xlarge" source={{uri:this.props.auth.info.picture.data.url}}/>
-              <Button  titleStyle={{ fontWeight: "700" }}
-                        buttonStyle={{
-                          backgroundColor: this.props.subscribeList.includes(val._id)?'#27ae60':"#e67e22",
-                          width: 300,
-                          height: 45,
-                          borderColor: "transparent",
-                          borderWidth: 0,
-                          borderRadius: 15
-                        }}
-                        containerStyle={{ flex: 1, alignItems:'center' }}
-                        onPress={()=>{this.props.navigation.navigate("MyCampaignDashboard")}} title='MY Managed Campaign' containerStyle= {{marginVertical:20}} titleStyle={{ fontWeight: "700",color:'white' }} buttonStyle={{backgroundColor: "#3498db",height: 45,width:null}}/>
+              <Button   onPress={()=>{this.props.navigation.navigate("MyCampaignDashboard")}} title='MY CAMPAIGN' 
+                        containerStyle= {{marginVertical:20, marginTop:20}} titleStyle={{ fontWeight: "700",color:'white' }} 
+                        buttonStyle={{width: 300,
+                        height: 45,
+                        borderColor: "transparent",
+                        borderRadius:15,
+                        borderWidth: 0}}/>
               <Text h3> Total Spare: $ {this.props.totalSpare.totalSpare.toFixed(2)}</Text>
             </View>
             <View >
