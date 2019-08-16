@@ -4,14 +4,14 @@
 // export const url = (typeof manifest.packagerOpts === `object`) && manifest.packagerOpts.dev
 //   ? manifest.debuggerHost.split(`:`).shift().concat(`:3000`)
 //   : `api.example.com`;
-export const url = "spare-bare-server.herokuapp.com"
-console.log(url)
-const Frisbee = require('frisbee');
+export const url = "spare-bare-server.herokuapp.com";
+console.log(url);
+const Frisbee = require("frisbee");
 export const api = new Frisbee({
-    baseURI: `http://${url}`,
-    headers: {
-        'Accept':'application/json',
-        'Content-Type' :'application/json'
-    }
+  baseURI: `http://${url}`,
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json"
+  }
 });
 // export const api = "localhost:3000";
